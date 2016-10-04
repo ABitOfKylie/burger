@@ -1,5 +1,24 @@
 var connection = require('../config/connection.js');
 
+function printQuestionMarks(num){
+	var arr =[];
+
+	for (var i=0; i<num; i++){
+		arr.push('?')
+	};
+	return arr.toString();
+};
+
+function objToSql(ob){
+	// col1=value1,col2 = value2.....
+	var arr = [];
+
+	for (var key in ob) {
+		arr.push(key + "=" + ob[key]);
+	};
+	return arr.toString();
+};
+
 var orm = {
 	all: function (burgers, cb) {
 		var queryString = 'SELECT * FROM ' + burgers + ';';
