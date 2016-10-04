@@ -1,53 +1,72 @@
-<h1>Eat-Da-Burger!</h1>
+<div class="container">
+  <div class ="jumbotron">
+    <img src="/assets/images/burger.jpg">
+    <h1>Eat-Da-Burger!</h1>
+    <h2>Hold the pickles, hold the lettuce, special orders don't upset us!</h2>
+  </div>
 
-<h2>Hold the pickles, hold the lettuce, special orders don't upset us!</h2>
+<div class = "col-md-10 col-md-offset-1">
+  <h2>Add a Burger</h2>
+  <p>Enter a burger that you want to eat, then click the button.</p>
+
+<form class="create-update-form" action="burgers/create" method="POST">
+
+  <div class="form-group">
+    <label for="ca">Name Your burger:</label>
+    <input type="text" id="ca" name="name" value="1">
+  </div>
+
+  <button class = "btn btn-default btn-lg" type="submit">Add Burger</button>
+  <p>Enter a burger that you want to eat, then click the button.</p>
+</form>
+</div>
+
+
+{{!-- burger list before prior to digestion --}}
+
+<div class = "row">
+  <div class = "col-md-4 col-md-offset-1">
+    <div class="panel-panel default">
+
 
 <ol>
   {{#each burgers}}
-    {{#unless this.false}}
+    {{#unless this.devoured}}
       <li>
         {{this.name}}
 
         <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="sleepy" value="true">
-          <button type="submit">SLEEP TIME!</button>
+          <input type="hidden" name="devoured" value="true">
+          <button class="btn btn-default btn-lg" type="submit">Devour</button>
         </form>
       </li>
     {{/unless}}
   {{/each}}
 </ol>
+</div>
+</div>
+</div>
+<!-- once listed on the left - I want to change value true to false maybe don't have to deal with t/f just show /hide -->
+{{!-- burger list after digestion --}}
+<div class = "row">
+  <div class = "col-md-4 col-md-offset-1">
+    <div class="panel-panel default">
 
-<h2>burgers that are devoured!</h2>
+<h2>You've put away the following burgers!</h2>
 
 <ul>
   {{#each burgers}}
-    {{#if this.sleepy}}
+    {{#if this.devoured}}
       <li>
-        {{this.name}}
+        <p>{{this.name}}</p>
 
-        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="sleepy" value="false">
-          <button type="submit">WAKE UP!</button>
-        </form>
       </li>
     {{/if}}
   {{/each}}
 </ul>
+</div>
+</div>
+</div>
+</div>
 
-<h2>Add a Burger</h2>
-<form class="create-update-form" action="burgers/create" method="POST">
 
-  <div class="form-group">
-    <label for="ca">Name Your burger:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <div class="form-group">
-    <label for="slee">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
-
-  <button type="submit">Add Burger</button>
-  <p>Enter a burger that you want to eat, then click the button.</p>
-</form>
