@@ -29,5 +29,11 @@ router.put('/burgers/update/:id', function (req, res) {
 		res.redirect('/burgers');
 	});
 });
+router.delete('/burgers/delete/', function (req, res) {
+
+    burgers.delete(function () {
+        res.redirect('/burgers');
+    });
+});
 
 module.exports = router;

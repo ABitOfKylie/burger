@@ -10,13 +10,20 @@ body{
     background: linear-gradient(0deg, red, yellow); /* Standard syntax (must be last) */
 }
 
-/*.jumbotron{
+.jumbotron{
+	color:white;
+/*	max-height: 300px;*/
 	
-}*/
+}
 
-h1{
+img{
+	max-width: 300px;
+	max-height:300px;
+}
+
+#mainText{
 	size:36px;
-	font-color:red;
+	font-color:white !important;
 	font-weight: bold;
 }
 
@@ -25,4 +32,52 @@ h2{
 	font-color: green;
 	font-weight: bold;;
 }
+
+ol{
+	float:left;
+	font-size: 26px;
+}
+
+ul{
+	float:right;
+	font-size: 26px;
+}
+p{
+	font-size: 18px;
+}
+.lead{
+	font-size: 28px;
+	color:red;
+}
+textarea{
+		font-size: 28px;
+		color: red;
+		font-style: bold;
+
+}
+#ca{
+	width:500px;
+	height: 50px;
+}
+button{
+	width: 100px;
+	height: 25px;
+	font-size: 15px;
+	color:red;
+	font-style: bold;
+}
+#ca{
+	font-style: bold;
+	color:red;
+}
+
+#toEat{
+    height:75px;
+    width:300px;
+    background-color: #fff;
+    text-align:center;
+}
+
+
+
 
