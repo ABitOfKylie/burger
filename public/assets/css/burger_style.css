@@ -47,7 +47,8 @@ p{
 }
 .lead{
 	font-size: 28px;
-	color:red;
+	text-align:center;
+	color:black;
 }
 textarea{
 		font-size: 28px;
@@ -64,11 +65,19 @@ button{
 	height: 25px;
 	font-size: 15px;
 	color:red;
-	font-style: bold;
+	font-style: bold;	
 }
 #ca{
 	font-style: bold;
 	color:red;
+}
+
+li{
+	background-color:lightyellow;
+	border:15px;
+	border-radius: 15px;
+	width:500px;
+	height:30px;
 }
 
 #toEat{
@@ -78,6 +87,23 @@ button{
     text-align:center;
 }
 
+.choice{
+	width:270px;
+	height: 30px;
+}
+.footer{
+	float: left;
+	padding-top: 30px;
+}
 
-
+#left-group{
+	position:absolute;
+	left:0;
+	padding-left:50px;
+}
+#right-group{
+	position:absolute;
+	right:0;
+	padding-right:50px;
+}
 
